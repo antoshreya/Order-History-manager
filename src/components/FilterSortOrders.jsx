@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import OrderCard from "./OrderCard";
 import "./FilterSortOrders.css";
 
-const LOCAL_STORAGE_KEY = "ordersData"; // Key to store/retrieve data in local storage
+const LOCAL_STORAGE_KEY = "ordersData"; 
 
 const FilterSortOrders = () => {
   const [orders, setOrders] = useState(() => {
-    // Load orders from Local Storage on initial render
+    
     const savedOrders = localStorage.getItem(LOCAL_STORAGE_KEY);
-    return savedOrders ? JSON.parse(savedOrders) : []; // Default to empty array if no data
+    return savedOrders ? JSON.parse(savedOrders) : [];
   });
 
   const [filterStatus, setFilterStatus] = useState("All");
@@ -21,7 +21,7 @@ const FilterSortOrders = () => {
     status: "Pending",
   });
 
-  // Save orders to Local Storage whenever orders change
+  
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(orders));
   }, [orders]);
@@ -38,7 +38,7 @@ const FilterSortOrders = () => {
     e.preventDefault();
     setOrders([
       ...orders,
-      { ...newOrder, id: orders.length + 1 }, // Assign a unique ID
+      { ...newOrder, id: orders.length + 1 }, 
     ]);
     setNewOrder({ id: "", customerName: "", date: "", amount: "", status: "Pending" });
   };
