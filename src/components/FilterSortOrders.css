@@ -1,0 +1,46 @@
+.add-order-form {
+  background: rgba(255, 255, 255, 0.2); /* Translucent background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37); /* Soft shadow */
+  backdrop-filter: blur(10px); /* Blur effect for glassmorphic design */
+  -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Subtle border */
+  padding: 20px; /* Padding inside the box */
+  width: 300px; /* Adjust width */
+  display: grid;
+  grid-template-columns: 1fr; /* One column layout */
+  gap: 15px; /* Spacing between elements */
+}
+
+.add-order-form label {
+  font-weight: bold;
+  color: white; /* White text for contrast */
+}
+
+.add-order-form input,
+.add-order-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  width: 100%; /* Full-width inputs */
+  font-size: 14px;
+}
+
+.add-order-form input {
+  background: rgba(255, 255, 255, 0.8); /* Slightly opaque background */
+  color: #333; /* Dark text */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inset shadow */
+}
+
+.add-order-form button {
+  background: linear-gradient(135deg, #ff9900, #e68a00); /* Gradient button */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-order-form button:hover {
+  background: linear-gradient(135deg, #e68a00, #cc7a00); /* Darker gradient on hover */
+  transform: scale(1.05); /* Slight scale-up on hover */
+}
