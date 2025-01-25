@@ -1,13 +1,38 @@
-import React from "react";
-import FilterSortOrders from "./components/FilterSortOrders";
-import "./App.css";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import WelcomePage from "./components/Welcome";
+import AddOrderPage from "./components/AddOrderPage";
+import OrderHistoryPage from "./components/OrderHistoryPage";
 
 function App() {
+  const LOCAL_STORAGE_KEY = "ordersData"; // Key for localStorage
+
+  // Load orders from localStorage or start with an empty array
+  const [orders, setOrders] = useState(() => {
+    const savedOrders = localStorage.getItem(LOCAL_STORAGE_KEY);
+    return savedOrders ? JSON.parse(savedOrders) : [];
+  });
+
+  // Save orders to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(orders));
+  }, [orders]);
+
   return (
-    <div className="App">
-      <h1>Order History Manager</h1>
-      <FilterSortOrders />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route
+          path="/add-order"
+          element={<AddOrderPage setOrders={setOrders} />}
+        />
+        <Route
+          path="/order-history"
+          element={<OrderHistoryPage orders={orders} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
