@@ -1,18 +1,24 @@
 import React from "react";
 import OrderCard from "./OrderCard";
-import "./FilterSortOrders.css";
-const OrderHistoryPage = ({ orders }) => {
+
+const OrderHistoryPage = ({ orders, setOrders }) => {
+
+  const deleteOrder = (orderId) => {
+    console.log("Deleting order with ID:", orderId);
+    setOrders((prevOrders) => prevOrders.filter((order) => order.id !== orderId));
+  };
+
   return (
-    <div className="h-screen flex flex-col items-center bg-gray-100">
-      <h1 className="text-3xl font-bold my-6">Order History</h1>
-      {orders.length > 0 ? (
-        <div className="grid gap-6">
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Order History</h1>
+      {orders.length === 0 ? (
+        <p>No orders available.</p>
+      ) : (
+        <div className="grid gap-4">
           {orders.map((order) => (
-            <OrderCard key={order.id} order={order} />
+            <OrderCard key={order.id} order={order} onDelete={deleteOrder} />
           ))}
         </div>
-      ) : (
-        <p className="text-gray-700">No orders available. Add some orders!</p>
       )}
     </div>
   );

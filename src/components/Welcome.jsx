@@ -34,11 +34,11 @@ const WelcomePage = () => {
   const navigate = useNavigate();
 
   const handleNewOrder = () => {
-    navigate("/add-order"); // Redirect to the new order page
+    navigate("/add-order"); 
   };
 
   const handleOrderHistory = () => {
-    navigate("/order-history"); // Redirect to the order history page
+    navigate("/order-history"); 
   };
 
   return (

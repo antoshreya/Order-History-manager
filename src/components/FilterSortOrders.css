@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #f3f4f8 0%, #b8c8e6 100%);
+  background: linear-gradient(135deg, #f3f4f8 0%, #afc7f3 100%);
   color: #333;
   line-height: 1.6;
 }
@@ -32,14 +32,16 @@ button:active {
   transform: scale(0.95);
 }
 
-/* Header and Page Layout */
+
 .container {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center;
+  justify-items: center;
 }
 
-/* Card Styling */
+
 .order-card {
   background: white;
   border-radius: 12px;
@@ -65,7 +67,7 @@ button:active {
   color: #555;
 }
 
-/* Forms Styling */
+
 form {
   background: white;
   border-radius: 12px;
@@ -89,7 +91,7 @@ input:focus, select:focus {
   box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
 }
 
-/* Welcome Page */
+
 .welcome-page {
   text-align: center;
   background: linear-gradient(135deg, #6c63ff, #3b82f6);
@@ -106,7 +108,7 @@ input:focus, select:focus {
   margin: 10px;
 }
 
-/* Order History Page */
+
 .order-history {
   background: #f3f4f8;
   padding: 40px;
@@ -122,14 +124,14 @@ input:focus, select:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Make the container take the full height of the viewport */
+  height: 100vh; 
   background: linear-gradient(135deg, #f3f4f8 0%, #b8c8e6 100%);
-  margin: 0; /* Remove any default margins */
+  margin: 0; 
 }
 
 .add-order-page form {
   width: 100%;
-  max-width: 400px; /* Set a max-width to the form for a clean layout */
+  max-width: 400px; 
   padding: 20px;
   background: white;
   border-radius: 12px;
@@ -141,7 +143,7 @@ input:focus, select:focus {
   margin-bottom: 20px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   body {
     font-size: 0.9rem;

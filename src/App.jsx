@@ -6,15 +6,15 @@ import AddOrderPage from "./components/AddOrderPage";
 import OrderHistoryPage from "./components/OrderHistoryPage";
 
 function App() {
-  const LOCAL_STORAGE_KEY = "ordersData"; // Key for localStorage
+  const LOCAL_STORAGE_KEY = "ordersData"; 
 
-  // Load orders from localStorage or start with an empty array
+  
   const [orders, setOrders] = useState(() => {
     const savedOrders = localStorage.getItem(LOCAL_STORAGE_KEY);
     return savedOrders ? JSON.parse(savedOrders) : [];
   });
 
-  // Save orders to localStorage whenever they change
+  
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(orders));
   }, [orders]);
@@ -29,7 +29,7 @@ function App() {
         />
         <Route
           path="/order-history"
-          element={<OrderHistoryPage orders={orders} />}
+          element={<OrderHistoryPage orders={orders} setOrders={setOrders} />}
         />
       </Routes>
     </BrowserRouter>

@@ -12,12 +12,16 @@ const AddOrderPage = ({ setOrders }) => {
 
   const handleAddOrder = (e) => {
     e.preventDefault();
-    setOrders((prevOrders) => [
-      ...prevOrders,
-      { ...newOrder, id: Date.now() },
-    ]);
-    setNewOrder({ id: "", customerName: "", date: "", amount: "", status: "Pending" });
+  
+    setOrders((prevOrders) => {
+      const nextId = prevOrders.length + 1; 
+      const newOrderWithId = { ...newOrder, id: `Order-${nextId}` }; 
+      return [...prevOrders, newOrderWithId];
+    });
+  
+    setNewOrder({ id: "", customerName: "", date: "", amount: "", status: "Pending" }); 
   };
+  
 
   return (
     <div className="h-screen flex justify-center items-center bg-gradient-to-r from-blue-100 to-blue-300">
